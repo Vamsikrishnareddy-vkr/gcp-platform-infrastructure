@@ -45,3 +45,16 @@ module "cloud_nat" {
   router_name = module.cloud_router.router_name
   nat_name    = "gke-cloud-nat"
 }
+
+module "gke" {
+  source = "./modules/gke"
+
+  project_id = var.project_id
+  region     = var.region
+
+  cluster_name = "dev-gke-cluster"
+
+  network         = module.network.vpc_name
+  subnetwork      = module.network.subnet_name
+  service_account = module.service_account.service_account_email
+}
