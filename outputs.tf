@@ -27,3 +27,8 @@ output "service_account_name" {
   description = "Service Account Name"
   value       = module.service_account.service_account_name
 }
+
+output "artifact_repository_name" {
+  description = "Artifact Registry Repository Name"
+  value       = module.artifact_registry.repository_name
+}

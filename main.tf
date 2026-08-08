@@ -16,3 +16,12 @@ module "service_account" {
   service_account_id = "terraform-sa"
   display_name       = "Terraform Service Account"
 }
+
+module "artifact_registry" {
+  source = "./modules/artifact-registry"
+
+  project_id    = var.project_id
+  region        = var.region
+  repository_id = "docker-images"
+  description   = "Docker images for GKE applications"
+}
