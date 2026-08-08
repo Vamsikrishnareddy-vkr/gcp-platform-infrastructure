@@ -1,19 +1,29 @@
 output "vpc_name" {
   description = "VPC Network Name"
-  value       = google_compute_network.vpc.name
+  value       = module.network.vpc_name
 }
 
 output "vpc_id" {
   description = "VPC Network ID"
-  value       = google_compute_network.vpc.id
+  value       = module.network.vpc_id
 }
 
 output "subnet_name" {
   description = "Subnet Name"
-  value       = google_compute_subnetwork.subnet.name
+  value       = module.network.subnet_name
 }
 
 output "subnet_id" {
   description = "Subnet ID"
-  value       = google_compute_subnetwork.subnet.id
+  value       = module.network.subnet_id
+}
+
+output "service_account_email" {
+  description = "Service Account Email"
+  value       = module.service_account.service_account_email
+}
+
+output "service_account_name" {
+  description = "Service Account Name"
+  value       = module.service_account.service_account_name
 }
