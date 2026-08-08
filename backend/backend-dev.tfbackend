@@ -1,0 +1,2 @@
+bucket = "gcp-platform-dev-tfstate"
+prefix = "terraform/state"
