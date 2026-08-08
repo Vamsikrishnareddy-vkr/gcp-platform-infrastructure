@@ -75,3 +75,18 @@ module "firewall" {
     "gke-node"
   ]
 }
+
+module "iam" {
+  source = "./modules/iam"
+
+  project_id = var.project_id
+
+  service_account_email = module.service_account.service_account_email
+
+  roles = [
+    "roles/container.admin",
+    "roles/artifactregistry.reader",
+    "roles/logging.logWriter",
+    "roles/monitoring.metricWriter"
+  ]
+}

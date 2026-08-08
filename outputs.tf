@@ -60,3 +60,8 @@ output "firewall_id" {
   description = "Firewall Rule ID"
   value       = module.firewall.firewall_id
 }
+
+output "iam_roles" {
+  description = "IAM Roles assigned to the Service Account"
+  value       = module.iam.assigned_roles
+}
