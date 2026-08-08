@@ -4,9 +4,9 @@ module "network" {
   project_id = var.project_id
   region     = var.region
 
-  vpc_name    = "dev-vpc"
-  subnet_name = "dev-subnet"
-  subnet_cidr = "10.10.0.0/24"
+  vpc_name    = var.vpc_name
+  subnet_name = var.subnet_name
+  subnet_cidr = var.subnet_cidr
 }
 
 module "service_account" {
@@ -52,7 +52,7 @@ module "gke" {
   project_id = var.project_id
   region     = var.region
 
-  cluster_name = "dev-gke-cluster"
+  cluster_name = var.cluster_name
 
   network         = module.network.vpc_name
   subnetwork      = module.network.subnet_name
@@ -68,7 +68,7 @@ module "firewall" {
   firewall_name = "allow-internal"
 
   source_ranges = [
-    "10.10.0.0/24"
+    var.subnet_cidr
   ]
 
   target_tags = [
