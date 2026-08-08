@@ -32,3 +32,8 @@ output "artifact_repository_name" {
   description = "Artifact Registry Repository Name"
   value       = module.artifact_registry.repository_name
 }
+
+output "cloud_router_name" {
+  description = "Cloud Router Name"
+  value       = module.cloud_router.router_name
+}

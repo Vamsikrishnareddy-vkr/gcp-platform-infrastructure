@@ -25,3 +25,13 @@ module "artifact_registry" {
   repository_id = "docker-images"
   description   = "Docker images for GKE applications"
 }
+
+module "cloud_router" {
+  source = "./modules/cloud-router"
+
+  project_id  = var.project_id
+  region      = var.region
+  router_name = "gke-router"
+
+  network = module.network.vpc_name
+}
