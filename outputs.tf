@@ -37,3 +37,8 @@ output "cloud_router_name" {
   description = "Cloud Router Name"
   value       = module.cloud_router.router_name
 }
+
+output "cloud_nat_name" {
+  description = "Cloud NAT Name"
+  value       = module.cloud_nat.nat_name
+}

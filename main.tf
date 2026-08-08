@@ -35,3 +35,13 @@ module "cloud_router" {
 
   network = module.network.vpc_name
 }
+
+module "cloud_nat" {
+  source = "./modules/cloud-nat"
+
+  project_id = var.project_id
+  region     = var.region
+
+  router_name = module.cloud_router.router_name
+  nat_name    = "gke-cloud-nat"
+}
