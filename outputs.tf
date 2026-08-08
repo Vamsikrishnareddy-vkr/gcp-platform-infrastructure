@@ -50,3 +50,13 @@ output "gke_cluster_name" {
 output "gke_cluster_endpoint" {
   value = module.gke.cluster_endpoint
 }
+
+output "firewall_name" {
+  description = "Firewall Rule Name"
+  value       = module.firewall.firewall_name
+}
+
+output "firewall_id" {
+  description = "Firewall Rule ID"
+  value       = module.firewall.firewall_id
+}

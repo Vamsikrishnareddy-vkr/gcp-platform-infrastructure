@@ -58,3 +58,20 @@ module "gke" {
   subnetwork      = module.network.subnet_name
   service_account = module.service_account.service_account_email
 }
+
+module "firewall" {
+  source = "./modules/firewall"
+
+  project_id = var.project_id
+  network    = module.network.vpc_name
+
+  firewall_name = "allow-internal"
+
+  source_ranges = [
+    "10.10.0.0/24"
+  ]
+
+  target_tags = [
+    "gke-node"
+  ]
+}
