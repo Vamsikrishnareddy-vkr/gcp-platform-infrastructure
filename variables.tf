@@ -42,3 +42,8 @@ variable "cluster_name" {
   description = "GKE Cluster Name"
   type        = string
 }
+
+variable "notification_email" {
+  description = "Email address for monitoring alerts"
+  type        = string
+}

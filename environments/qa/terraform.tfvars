@@ -13,3 +13,5 @@ subnet_name = "qa-subnet"
 subnet_cidr = "10.20.0.0/24"
 
 cluster_name = "qa-gke-cluster"
+
+notification_email = "krishnareddyt692@gmail.com"

@@ -13,3 +13,5 @@ subnet_name = "dev-subnet"
 subnet_cidr = "10.10.0.0/24"
 
 cluster_name = "dev-gke-cluster"
+
+notification_email = "krishnareddyt692@gmail.com"

@@ -13,3 +13,5 @@ subnet_name = "prod-subnet"
 subnet_cidr = "10.30.0.0/24"
 
 cluster_name = "prod-gke-cluster"
+
+notification_email = "krishnareddyt692@gmail.com"

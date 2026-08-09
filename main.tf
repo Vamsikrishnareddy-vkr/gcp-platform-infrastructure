@@ -90,3 +90,10 @@ module "iam" {
     "roles/monitoring.metricWriter"
   ]
 }
+
+module "monitoring" {
+  source = "./modules/monitoring"
+
+  project_id         = var.project_id
+  notification_email = var.notification_email
+}
