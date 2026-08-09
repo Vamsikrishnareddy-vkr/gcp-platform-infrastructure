@@ -23,28 +23,19 @@ The main goal of this project is to keep the infrastructure reusable and organiz
 
 ## Architecture
 
-The basic flow is:
+The project mainly has two parts.
 
-Developer
-    |
-    v
-GitHub
-    |
-    +---- Terraform
-    |       |
-    |       +---- VPC
-    |       +---- IAM
-    |       +---- GKE
-    |       +---- Cloud NAT
-    |       +---- Artifact Registry
-    |
-    +---- GitHub Actions
-            |
-            +---- Terraform validation
-            |
-            +---- Docker build
-            |
-            +---- GKE deployment
+Terraform is used to create and manage the GCP infrastructure. The main resources are VPC, IAM, Cloud NAT, Artifact Registry, GKE and monitoring.
+
+GitHub Actions is used for CI/CD. Terraform changes go through Terraform validation, and the application is built as a Docker image.
+
+The application flow is:
+
+GitHub → GitHub Actions → Docker → Artifact Registry → GKE → Node.js application
+
+The infrastructure flow is:
+
+Terraform → GCP infrastructure → GKE
 
 ## Repository Structure
 
